@@ -1,0 +1,394 @@
+.DAT_HomeScreen {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+
+  // Labels and standard subtext
+  &_Label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &_Val {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.15;
+    margin-top: 4px;
+    margin-bottom: 12px;
+  }
+
+  &_SubText {
+    font-size: 11px;
+    color: #64748b;
+    font-weight: 500;
+  }
+
+  &_SubVal {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 2px;
+  }
+
+  &_Dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+
+    &_Active {
+      background-color: #10b981;
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+    }
+
+    &_Idle {
+      background-color: #ef4444;
+      box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+    }
+  }
+
+  // Top widgets row
+  &_Top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 24px;
+
+    &_Card {
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 20px;
+      padding: 18px 22px;
+      box-shadow: 0 8px 32px rgba(15, 23, 42, 0.05);
+      display: flex;
+      flex-grow: 0;
+    }
+
+    // Sites Capacity Card (Left)
+    &_Sites {
+      width: 360px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+
+      &_Info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &_Status {
+        display: flex;
+        gap: 16px;
+        margin-top: 10px;
+      }
+
+      &_Chart {
+        position: relative;
+        width: 76px;
+        height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        &_Label {
+          position: absolute;
+          inset: 0;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          text-align: center;
+          pointer-events: none;
+          line-height: 1;
+        }
+      }
+    }
+
+    &_Donut {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+
+      &_Bg {
+        fill: none;
+        stroke: #eef4fb;
+        stroke-width: 5;
+      }
+
+      &_Fg {
+        fill: none;
+        stroke-width: 5;
+        stroke-linecap: round;
+        transition: stroke-dashoffset 0.35s ease;
+      }
+    }
+
+    &_Chart {
+      &_Sub {
+        font-size: 7px;
+        font-weight: 500;
+        color: #64748b;
+        white-space: nowrap;
+        margin-bottom: 2px;
+        line-height: 1.1;
+      }
+
+      &_ValGroup {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 1px;
+      }
+
+      &_Val {
+        font-size: 18px;
+        font-weight: 700;
+        color: #0f172a;
+        line-height: 1;
+      }
+
+      &_Unit {
+        font-size: 8px;
+        font-weight: 500;
+        color: #64748b;
+        line-height: 1;
+      }
+    }
+
+    // Weather Card (Right)
+    &_Weather {
+      width: 250px;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+
+      &_Header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      &_Body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      &_Temp {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        h2 {
+          font-size: 26px;
+          font-weight: 700;
+          color: #0f172a;
+          line-height: 1;
+        }
+
+        span {
+          font-size: 11px;
+          color: #64748b;
+          font-weight: 500;
+        }
+      }
+
+      &_Stats {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding-left: 14px;
+        border-left: 1px solid rgba(15, 23, 42, 0.08);
+      }
+    }
+
+    &_Top_Date,
+    &_Date {
+      font-size: 11px;
+      font-weight: 600;
+      color: #64748b;
+    }
+
+    &_Top_WeatherIcon,
+    &_WeatherIcon {
+      font-size: 28px;
+      color: #f59e0b;
+      filter: drop-shadow(0 4px 10px rgba(245, 158, 11, 0.3));
+    }
+
+    &_Top_Weather_Item,
+    &_Weather_Item {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
+
+    &_Top_Weather_Label,
+    &_Weather_Label {
+      font-size: 9px;
+      font-weight: 500;
+      color: #64748b;
+    }
+
+    &_Top_Weather_Val,
+    &_Weather_Val {
+      font-size: 11px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+  }
+
+  // Core metrics grid (4 columns)
+  &_Metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    width: 100%;
+  }
+
+  &_MetricCard {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 18px;
+    padding: 16px 20px 20px 20px;
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: all 0.25s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.6);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.06);
+    }
+
+    &_Header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    &_Icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    &_Info {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.35;
+    }
+  }
+
+  &_MetricVal {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 2px 0;
+  }
+
+  &_SubLabel {
+    font-size: 10px;
+    color: #64748b;
+    font-weight: 500;
+  }
+
+  &_Trend {
+    display: inline-flex;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 600;
+
+    &_Up {
+      color: #10b981;
+    }
+
+    &_Text {
+      color: #64748b;
+      font-weight: 500;
+      margin-left: 4px;
+    }
+  }
+
+  &_Icon {
+    &_Power {
+      background-color: rgba(12, 109, 253, 0.1);
+      color: #0c6dfd;
+    }
+
+    &_Energy {
+      background-color: rgba(245, 158, 11, 0.1);
+      color: #f59e0b;
+    }
+
+    &_CO2 {
+      background-color: rgba(16, 185, 129, 0.1);
+      color: #10b981;
+    }
+
+    &_Revenue {
+      background-color: rgba(16, 185, 129, 0.1);
+      color: #10b981;
+    }
+  }
+
+  &_Sparkline {
+    width: 100%;
+    height: 25px;
+    margin-top: 4px;
+
+    &_Svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+  }
+}
+
+// Media Query for tablets/smaller screens
+@media (max-width: 1024px) {
+  .DAT_HomeScreen {
+    &_Top {
+      flex-direction: column;
+
+      &_Card {
+        width: 100%;
+      }
+    }
+
+    &_Metrics {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .DAT_HomeScreen {
+    &_Metrics {
+      grid-template-columns: 1fr;
+    }
+  }
+}
