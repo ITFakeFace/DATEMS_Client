@@ -8,9 +8,9 @@ import Login from "./Components/Screens/Login/Login";
 function App() {
   return (
     <Routes>
+      <Route path={"/login"} element={<Login />} />
       <Route path={"/"} element={<GeneralLayout />}>
         <Route index element={<HomeScreen />} />
-        {/* <Route path={"/login"} element={<Login />} /> */}
       </Route>
     </Routes>
   );
