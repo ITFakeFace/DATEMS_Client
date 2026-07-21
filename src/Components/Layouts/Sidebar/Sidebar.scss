@@ -60,6 +60,7 @@
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
       font-weight: 500;
       font-size: 14px;
+      text-decoration: none; // reset <a> default style
 
       &_Icon {
         width: 18px;

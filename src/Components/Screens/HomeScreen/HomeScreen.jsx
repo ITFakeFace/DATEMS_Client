@@ -60,9 +60,9 @@ const HomeScreen = () => {
               />
             </svg>
             <div className="DAT_HomeScreen_Top_Sites_Chart_Label">
-              <span className="DAT_HomeScreen_Chart_Sub">Total Capacity</span>
-              <span className="DAT_HomeScreen_Chart_Val">
-                2.54 <small className="DAT_HomeScreen_Chart_Unit">MWp</small>
+              <span className="DAT_HomeScreen_Top_Sites_Chart_Label_Sub">Total Capacity</span>
+              <span className="DAT_HomeScreen_Top_Sites_Chart_Label_Val">2.54
+                <small className="DAT_HomeScreen_Top_Sites_Chart_Label_Val_Unit">MWp</small>
               </span>
             </div>
           </div>

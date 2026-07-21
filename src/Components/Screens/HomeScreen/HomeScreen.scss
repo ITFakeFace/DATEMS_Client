@@ -94,8 +94,8 @@
 
       &_Chart {
         position: relative;
-        width: 76px;
-        height: 76px;
+        width: 88px;
+        height: 88px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -113,6 +113,35 @@
           text-align: center;
           pointer-events: none;
           line-height: 1;
+
+          &_Sub {
+            font-size: 8px;
+            font-weight: 500;
+            color: #64748b;
+            line-height: 1.1;
+            margin-bottom: 3px;
+            white-space: nowrap;
+          }
+
+          &_Val {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 2px;
+
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1;
+            white-space: nowrap;
+
+            &_Unit {
+              font-size: 8px;
+              font-weight: 500;
+              color: #64748b;
+              line-height: 1;
+            }
+          }
         }
       }
     }

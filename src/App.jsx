@@ -9,6 +9,13 @@ function App() {
     <Routes>
       <Route path={"/"} element={<GeneralLayout />}>
         <Route index element={<HomeScreen />} />
+        <Route path="sites" element={null} />
+        <Route path="analytics" element={null} />
+        <Route path="devices" element={null} />
+        <Route path="reports" element={null} />
+        <Route path="maintenance" element={null} />
+        <Route path="billing" element={null} />
+        <Route path="settings" element={null} />
       </Route>
     </Routes>
   );

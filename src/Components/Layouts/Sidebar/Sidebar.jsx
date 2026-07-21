@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTableCellsLarge,
@@ -17,14 +18,14 @@ import "./Sidebar.scss";
 
 const Sidebar = () => {
   const menuItems = [
-    { id: "overview", name: "Overview", icon: faTableCellsLarge, active: true },
-    { id: "sites", name: "Sites", icon: faLocationDot, active: false },
-    { id: "analytics", name: "Analytics", icon: faChartSimple, active: false },
-    { id: "devices", name: "Devices", icon: faSolarPanel, active: false },
-    { id: "reports", name: "Reports", icon: faFileLines, active: false },
-    { id: "maintenance", name: "Maintenance", icon: faScrewdriverWrench, active: false },
-    { id: "billing", name: "Billing", icon: faWallet, active: false },
-    { id: "settings", name: "Settings", icon: faGear, active: false },
+    { id: "overview", name: "Overview", icon: faTableCellsLarge, path: "/" },
+    { id: "sites", name: "Sites", icon: faLocationDot, path: "/sites" },
+    { id: "analytics", name: "Analytics", icon: faChartSimple, path: "/analytics" },
+    { id: "devices", name: "Devices", icon: faSolarPanel, path: "/devices" },
+    { id: "reports", name: "Reports", icon: faFileLines, path: "/reports" },
+    { id: "maintenance", name: "Maintenance", icon: faScrewdriverWrench, path: "/maintenance" },
+    { id: "billing", name: "Billing", icon: faWallet, path: "/billing" },
+    { id: "settings", name: "Settings", icon: faGear, path: "/settings" },
   ];
 
   return (
@@ -40,17 +41,19 @@ const Sidebar = () => {
       {/* Navigation Menu */}
       <div className="DAT_Sidebar_Menu">
         {menuItems.map((item) => (
-          <div
+          <NavLink
             key={item.id}
-            className={`DAT_Sidebar_Menu_Item ${
-              item.active ? "DAT_Sidebar_Menu_Item_Active" : ""
-            }`}
+            to={item.path}
+            end={item.path === "/"}
+            className={({ isActive }) =>
+              `DAT_Sidebar_Menu_Item${isActive ? " DAT_Sidebar_Menu_Item_Active" : ""}`
+            }
           >
             <div className="DAT_Sidebar_Menu_Item_Icon">
               <FontAwesomeIcon icon={item.icon} />
             </div>
             <span className="DAT_Sidebar_Menu_Item_Text">{item.name}</span>
-          </div>
+          </NavLink>
         ))}
       </div>
 
