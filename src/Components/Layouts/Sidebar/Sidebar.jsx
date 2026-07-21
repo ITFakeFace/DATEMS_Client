@@ -10,9 +10,8 @@ import {
   faScrewdriverWrench,
   faWallet,
   faGear,
-  faChevronDown,
   faArrowRight,
-  faBolt
+  faBolt,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Sidebar.scss";
 
@@ -73,22 +72,6 @@ const Sidebar = () => {
             <span>View Impact</span>
             <FontAwesomeIcon icon={faArrowRight} />
           </button>
-        </div>
-      </div>
-
-      {/* Profile Section */}
-      <div className="DAT_Sidebar_Profile">
-        <img
-          className="DAT_Sidebar_Profile_Avatar"
-          src="/user_avatar.png"
-          alt="Alex Carter Avatar"
-        />
-        <div className="DAT_Sidebar_Profile_Info">
-          <span className="DAT_Sidebar_Profile_Info_Name">Alex Carter</span>
-          <span className="DAT_Sidebar_Profile_Info_Role">Admin</span>
-        </div>
-        <div className="DAT_Sidebar_Profile_Arrow">
-          <FontAwesomeIcon icon={faChevronDown} />
         </div>
       </div>
     </div>

@@ -87,8 +87,8 @@
       &_Active {
         background: rgba(255, 255, 255, 0.65);
         color: #0c6dfd;
-        box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05), 
-                    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+        box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05),
+          inset 0 1px 1px rgba(255, 255, 255, 0.8);
         font-weight: 600;
 
         &:hover {
@@ -231,6 +231,141 @@
     &_Arrow {
       font-size: 11px;
       color: #64748b;
+      transition: transform 0.25s ease;
+
+      &_Open {
+        transform: rotate(90deg);
+      }
     }
+  }
+
+  // Profile Wrapper + Dropdown
+  &_Profile_Wrapper {
+    position: relative;
+  }
+
+  &_Profile_Dropdown {
+    position: absolute;
+    bottom: 0;
+    left: calc(100% + 12px);
+    width: 220px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.14),
+      0 2px 8px rgba(15, 23, 42, 0.06);
+    padding: 12px 8px;
+    z-index: 100;
+    animation: dropdownFadeIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &_Header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 4px 8px 10px;
+    }
+
+    &_Avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.1);
+      flex-shrink: 0;
+    }
+
+    &_Info {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    &_Name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #0f172a;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &_Email {
+      font-size: 11px;
+      color: #64748b;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &_Divider {
+      height: 1px;
+      background: rgba(15, 23, 42, 0.07);
+      margin: 4px 8px;
+    }
+
+    &_Item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 9px 12px;
+      border: none;
+      background: transparent;
+      border-radius: 10px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      text-align: left;
+      font-family: inherit;
+
+      svg {
+        width: 14px;
+        color: #64748b;
+        flex-shrink: 0;
+      }
+
+      &:hover {
+        background: rgba(12, 109, 253, 0.07);
+        color: #0c6dfd;
+
+        svg {
+          color: #0c6dfd;
+        }
+      }
+
+      &_Danger {
+        color: #ef4444;
+
+        svg {
+          color: #ef4444;
+        }
+
+        &:hover {
+          background: rgba(239, 68, 68, 0.08);
+          color: #dc2626;
+
+          svg {
+            color: #dc2626;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
