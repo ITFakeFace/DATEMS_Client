@@ -19,7 +19,7 @@ const HomeScreen = () => {
         {/* Sites Capacity Card */}
         <div className="DAT_HomeScreen_Top_Card DAT_HomeScreen_Top_Sites">
           <div className="DAT_HomeScreen_Top_Sites_Info">
-            <span className="DAT_HomeScreen_Label">Total Sites</span>
+            <span className="DAT_HomeScreen_Top_Sites_Info_Label">Total Sites</span>
             <h2 className="DAT_HomeScreen_Val">16</h2>
             <div className="DAT_HomeScreen_Top_Sites_Status">
               <div>
@@ -36,35 +36,29 @@ const HomeScreen = () => {
           </div>
           {/* Circular Capacity Donut Chart */}
           <div className="DAT_HomeScreen_Top_Sites_Chart">
-            <svg viewBox="0 0 100 100" className="DAT_HomeScreen_Top_Donut">
-              <defs>
-                <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#3b82f6" />
-                  <stop offset="100%" stopColor="#0284c7" />
-                </linearGradient>
-              </defs>
-              <circle
-                className="DAT_HomeScreen_Top_Donut_Bg"
-                cx="50"
-                cy="50"
-                r="42"
-              />
-              <circle
-                className="DAT_HomeScreen_Top_Donut_Fg"
-                cx="50"
-                cy="50"
-                r="42"
-                stroke="url(#blueGradient)"
-                strokeDasharray="263.8"
-                strokeDashoffset="66"
-              />
-            </svg>
-            <div className="DAT_HomeScreen_Top_Sites_Chart_Label">
+
+            <div className="DAT_HomeScreen_Top_Sites_Chart_Circle">
+              <div className="DAT_HomeScreen_Top_Sites_Chart_Circle_1">
+                <div className="DAT_HomeScreen_Top_Sites_Chart_Circle_1_Word">
+
+                  <div className="DAT_HomeScreen_Top_Sites_Chart_Circle_1_Word_Title">
+                    Total Capacity
+                  </div>
+                  <div className="DAT_HomeScreen_Top_Sites_Chart_Circle_1_Word_Main">
+                    254 MWP
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+            {/* <div className="DAT_HomeScreen_Top_Sites_Chart_Label">
               <span className="DAT_HomeScreen_Chart_Sub">Total Capacity</span>
               <span className="DAT_HomeScreen_Chart_Val">
                 2.54 <small className="DAT_HomeScreen_Chart_Unit">MWp</small>
               </span>
-            </div>
+            </div> */}
           </div>
         </div>
 

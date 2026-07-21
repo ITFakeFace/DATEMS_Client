@@ -94,12 +94,59 @@
 
       &_Chart {
         position: relative;
-        width: 76px;
+        width: 96px;
         height: 76px;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
+
+        &_Circle {
+          border: 1px solid black;
+          height: 120px;
+          width: 200px;
+          border-radius: 100%;
+          display: flex;
+          padding: 10px;
+          align-items: center;
+          justify-content: center;
+          background:
+            linear-gradient(to right,
+              blue 50%,
+              rgb(246, 244, 244) 0%);
+          // linear-gradient(to top,
+          //   rgb(195, 223, 250) 50%,
+          //   blue 50%);
+
+
+
+          &_1 {
+
+            height: 90px;
+            width: 100px;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(212, 234, 249);
+
+
+            &_Word {
+              display: flex;
+              flex-direction: column;
+
+              align-items: center;
+              justify-content: center;
+              background-color: rgb(212, 234, 249);
+
+
+              &_Title {
+                font-size: 10px;
+              }
+            }
+
+          }
+        }
 
         &_Label {
           position: absolute;

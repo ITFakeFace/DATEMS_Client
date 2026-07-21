@@ -25,6 +25,7 @@ const Sidebar = () => {
     { id: "maintenance", name: "Maintenance", icon: faScrewdriverWrench, active: false },
     { id: "billing", name: "Billing", icon: faWallet, active: false },
     { id: "settings", name: "Settings", icon: faGear, active: false },
+    { id: "Play", name: "Play", icon: faBolt, active: false },
   ];
 
   return (
@@ -32,9 +33,9 @@ const Sidebar = () => {
       {/* Logo Section */}
       <div className="DAT_Sidebar_Logo">
         <div className="DAT_Sidebar_Logo_Icon">
-          <FontAwesomeIcon icon={faBolt} />
+          <img src="../../../../src/assets/DAT_Logo.png" ></img>
         </div>
-        <span className="DAT_Sidebar_Logo_Text">SolarPulse</span>
+        <span className="DAT_Sidebar_Logo_Text">DAT_EMS</span>
       </div>
 
       {/* Navigation Menu */}
@@ -42,9 +43,8 @@ const Sidebar = () => {
         {menuItems.map((item) => (
           <div
             key={item.id}
-            className={`DAT_Sidebar_Menu_Item ${
-              item.active ? "DAT_Sidebar_Menu_Item_Active" : ""
-            }`}
+            className={`DAT_Sidebar_Menu_Item ${item.active ? "DAT_Sidebar_Menu_Item_Active" : ""
+              }`}
           >
             <div className="DAT_Sidebar_Menu_Item_Icon">
               <FontAwesomeIcon icon={item.icon} />
