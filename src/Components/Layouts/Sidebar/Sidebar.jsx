@@ -32,9 +32,9 @@ const Sidebar = () => {
       {/* Logo Section */}
       <div className="DAT_Sidebar_Logo">
         <div className="DAT_Sidebar_Logo_Icon">
-          <FontAwesomeIcon icon={faBolt} />
+          <img src="../../../../src/assets/DAT_Logo.png" ></img>
         </div>
-        <span className="DAT_Sidebar_Logo_Text">SolarPulse</span>
+        <span className="DAT_Sidebar_Logo_Text">DAT_EMS</span>
       </div>
 
       {/* Navigation Menu */}
@@ -42,11 +42,8 @@ const Sidebar = () => {
         {menuItems.map((item) => (
           <NavLink
             key={item.id}
-            to={item.path}
-            end={item.path === "/"}
-            className={({ isActive }) =>
-              `DAT_Sidebar_Menu_Item${isActive ? " DAT_Sidebar_Menu_Item_Active" : ""}`
-            }
+            className={`DAT_Sidebar_Menu_Item ${item.active ? "DAT_Sidebar_Menu_Item_Active" : ""
+              }`}
           >
             <div className="DAT_Sidebar_Menu_Item_Icon">
               <FontAwesomeIcon icon={item.icon} />
