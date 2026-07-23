@@ -16,7 +16,10 @@
     "@fortawesome/free-solid-svg-icons": "^7.3.1",
     "@fortawesome/react-fontawesome": "^3.5.0",
     "react": "^19.2.7",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^19.2.7",
+    "react-hook-form": "^7.82.0",
+    "react-intl": "^10.1.18",
     "react-router-dom": "^7.18.1",
     "scss": "^0.2.4"
   },
