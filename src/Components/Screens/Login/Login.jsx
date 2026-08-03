@@ -1,8 +1,4 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faHand
-} from "@fortawesome/free-solid-svg-icons";
+
 import "./Login.scss";
 import Background from "../../Layouts/background/background"
 export default function Login() {
