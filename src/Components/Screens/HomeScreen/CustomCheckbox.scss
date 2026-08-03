@@ -1,0 +1,32 @@
+.DAT_CustomCheckbox {
+  --width: 32px;
+  --active-background: linear-gradient(
+    135deg,
+    rgb(20, 23, 84) 0%,
+    rgb(53, 112, 206) 100%
+  );
+  --inactive-background: transparent;
+  --border-color: rgb(20, 23, 84);
+
+  width: var(--width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  border-radius: calc(var(--width) / 4);
+  background: var(--inactive-background);
+  border: solid var(--border-color) 2px;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+  color: transparent;
+
+  &_Icon {
+    font-size: calc(var(--width) * 0.6);
+  }
+
+  &.active {
+    color: rgb(255, 255, 255);
+    background: var(--active-background);
+    border: none;
+  }
+}
