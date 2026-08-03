@@ -1,0 +1,94 @@
+@use "/src/mixins" as *;
+
+.DAT_AdminSidebar {
+  --padding-left-content: 20px;
+  --width: 350px;
+  @include flexbox(column);
+  gap: 20px;
+  min-width: var(--width);
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    rgb(20, 23, 84) 0%,
+    // rgb(20, 23, 84) 20%,
+    rgb(5, 227, 255) 100%
+  );
+  color: rgb(255, 255, 255);
+
+  &_Header {
+    padding: 20px 0;
+    @include flexbox;
+    align-items: center;
+    justify-content: center;
+
+    &_Logo {
+      color: rgb(255, 255, 255);
+      font-size: 4rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+
+  &_AccountBox {
+    padding-left: var(--padding-left-content);
+    width: 100%;
+    @include flexbox(row);
+    gap: 12px;
+    align-items: center;
+    &_Avatar {
+      &_Cover {
+        --size: 80px;
+        --border-width: 1px;
+        --border-padding: 2px;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: calc(-1 * (var(--border-width) * 2 + var(--border-padding)));
+          left: calc(-1 * (var(--border-width) * 2 + var(--border-padding)));
+          width: calc(
+            var(--size) + (var(--border-width) + var(--border-padding)) * 2
+          );
+          aspect-ratio: 1/1;
+          background-color: transparent;
+          border-radius: 50%;
+          border: solid rgb(255, 255, 255) var(--border-width);
+        }
+
+        &_Image {
+          width: var(--size);
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    &_Info {
+      @include flexbox(column);
+      gap: 4px;
+
+      &_Hello {
+        font-size: 1.1rem;
+      }
+
+      &_Username {
+        font-size: 1.3rem;
+        max-width: 200px;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &_Menu {
+    padding-left: var(--padding-left-content);
+    overflow-y: auto;
+  }
+
+  &_Footer {
+    padding-left: var(--padding-left-content);
+  }
+}

@@ -1,46 +1,47 @@
 .DAT_Login {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  height: 100%;
+  padding: 0px 5px;
+
+  &_Title {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
-    height: 100%;
-    padding: 0px 5px;
 
+    width: 100%;
+    align-items: center;
+    height: fit-content;
+    margin-top: 0px;
+    position: relative;
 
-    &_Title {
-        display: flex;
-        flex-direction: column;
-
-        width: 100%;
-        align-items: center;
-        height: fit-content;
-        margin-top: 0px;
-        position: relative;
-
-        &_Greeting {
-            color: rgb(255, 255, 255);
-            font-size: 20px;
-
-        }
-
-        &_EMS {
-            background: linear-gradient(100deg, rgb(255, 255, 255) 0%, rgb(91, 189, 176) 100%);
-            font-size: 80px;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-
-            position: absolute;
-            top: 5px;
-        }
-
-        &_Login {
-            margin-top: 100px;
-            font-size: 40px;
-            color: white;
-            font-weight: 500;
-        }
+    &_Greeting {
+      color: rgb(255, 255, 255);
+      font-size: 20px;
     }
 
-    &_Username {}
+    &_EMS {
+      background: linear-gradient(
+        100deg,
+        rgb(255, 255, 255) 0%,
+        rgb(91, 189, 176) 100%
+      );
+      font-size: 80px;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
 
+      position: absolute;
+      top: 5px;
+    }
 
+    &_Login {
+      margin-top: 100px;
+      font-size: 40px;
+      color: white;
+      font-weight: 500;
+    }
+  }
+
+  &_Username {
+  }
 }

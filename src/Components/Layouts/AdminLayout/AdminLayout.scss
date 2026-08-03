@@ -1,0 +1,14 @@
+@use "/src/mixins" as *;
+
+.DAT_AdminLayout {
+  @include flexbox(row);
+  width: 100%;
+  height: 100vh;
+
+  &_Body {
+    @include flexbox(column);
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+  }
+}

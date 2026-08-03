@@ -1,25 +1,28 @@
 .DAT_CustomSwitchInput {
-  --padding-space: 2px;
   --button-width: 60px;
   --button-height: calc(var(--button-width) / 2);
-  width: var(--button-width);
-  height: var(--button-height);
-  border-radius: calc(var(--button-height) / 2);
-  background: linear-gradient(
+  --padding-space: 2px;
+  --active-background: linear-gradient(
+    to right,
+    rgb(53, 112, 206) 0%,
+    rgb(20, 23, 84) 100%
+  );
+  --inactive-background: linear-gradient(
     to right,
     rgb(220, 0, 0) 0%,
     rgb(255, 118, 118) 100%
   );
+
+  width: var(--button-width);
+  height: var(--button-height);
+  border-radius: calc(var(--button-height) / 2);
+  background: var(--inactive-background);
   position: relative;
   cursor: pointer;
   transition: all 0.3s ease;
 
   &.active {
-    background: linear-gradient(
-      to right,
-      rgb(53, 112, 206) 0%,
-      rgb(20, 23, 84) 100%
-    );
+    background: var(--active-background);
   }
 
   &_Switch {
@@ -42,7 +45,7 @@
     }
 
     &_Icon {
-      font-size: 0.8rem;
+      font-size: calc(var(--button-height) * 0.4);
     }
   }
 }
