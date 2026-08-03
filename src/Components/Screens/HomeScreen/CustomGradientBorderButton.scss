@@ -1,0 +1,37 @@
+.DAT_CustomGradientBorderButton {
+  --border-radius: 8px;
+  --background: transparent;
+  --border-color: linear-gradient(
+    to right,
+    #00c6ff,
+    #265083
+  ); /* MÀU GRADIENT */
+  --border-width: 3px;
+
+  position: relative;
+  background: var(--background);
+  color: #000000; /* Màu chữ */
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none; /* Tắt border mặc định */
+  border-radius: var(--border-radius); /* Bo góc tùy ý */
+  cursor: pointer;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: var(--border-width);
+    background: var(--border-color); /* MÀU GRADIENT */
+
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    z-index: -1;
+  }
+}

@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import GeneralLayout from "./Components/Layouts/GeneralLayout/GeneralLayout";
 import HomeScreen from "./Components/Screens/HomeScreen/HomeScreen";
 import Login from "./Components/Screens/Login/Login";
+import Error404Screen from "./Components/Screens/Error404Screen/Error404Screen";
 
 function App() {
   return (
@@ -11,14 +12,8 @@ function App() {
       <Route path={"/login"} element={<Login />} />
       <Route path={"/"} element={<GeneralLayout />}>
         <Route index element={<HomeScreen />} />
-        <Route path="sites" element={null} />
-        <Route path="analytics" element={null} />
-        <Route path="devices" element={null} />
-        <Route path="reports" element={null} />
-        <Route path="maintenance" element={null} />
-        <Route path="billing" element={null} />
-        <Route path="settings" element={null} />
       </Route>
+      <Route path="*" element={<Error404Screen />} />
     </Routes>
   );
 }
