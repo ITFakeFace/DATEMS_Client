@@ -3,13 +3,14 @@ import "./HomeScreen.scss";
 import CustomSwitchInput from "./CustomSwitchInput";
 import CustomGradientBorderButton from "./CustomGradientBorderButton";
 import CustomCheckbox from "./CustomCheckbox";
+import ExampleComponent from "../ExampleScreen/ExampleComponent";
 
 const HomeScreen = () => {
   const [value, setValue] = useState(false);
 
   return (
     <div className={`DAT_HomeScreen`}>
-      <div>
+      {/* <div>
         <div>{value ? "ON" : "OFF"}</div>
         <br />
         <br />
@@ -31,7 +32,8 @@ const HomeScreen = () => {
         <br />
         <br />
         <CustomCheckbox value={value} onChange={() => setValue(!value)} />
-      </div>
+      </div> */}
+      <ExampleComponent />
     </div>
   );
 };
