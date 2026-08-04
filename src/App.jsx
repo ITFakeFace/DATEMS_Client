@@ -10,10 +10,8 @@ import ExampleScreen from "./Components/Screens/ExampleScreen/ExampleScreen";
 function App() {
   return (
     <Routes>
-      {/* Cụm route dành cho xác thực (Public) */}
-      <Route path="/" element={<AuthLayout />}>
-        <Route path="login" element={<Login />} />
-        <Route path="example" element={<ExampleScreen />} />
+      <Route path={""} element={<AuthLayout />}>
+        <Route path={"/login"} element={<Login />} />
       </Route>
 
       {/* Cụm route dành cho Admin (Cần bảo vệ) */}
