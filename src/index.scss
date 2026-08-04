@@ -2,10 +2,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --primary-color: rgb(135, 170, 35);
-  --secondary-color: rgb(188, 195, 170);
-  --third-color: rgb(61, 72, 21);
-  --background-color: rgb(237, 233, 230);
+  --color-primary-darker: rgb(0, 3, 18);
+  --color-primary-dark: rgb(20, 23, 84);
+  --color-primary: rgb(53, 112, 206);
+  --color-secondary: rgb(5, 226, 194);
+  --color-secondary-light: rgb(5, 227, 255);
+  --color-secondary-lighter: rgb(233, 255, 250);
+  --color-danger-dark: rgb(220, 0, 0);
+  --color-danger: rgb(255, 56, 56);
+  --color-danger-light: rgb(255, 118, 118);
+
   --font-montserrat: "Montserrat", sans-serif;
   --font-outfit: "Outfit", sans-serif;
 }

@@ -1,0 +1,41 @@
+@use "/src/mixins" as *;
+
+.DAT_ExampleComponent {
+  @include flexbox(column);
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(240, 240, 240, 0.3);
+
+  &_ContentContainer {
+    overflow: hidden;
+
+    &_Box {
+      --current-step: 1;
+      @include flexbox(row);
+      width: 300%;
+      border: 1px solid rgba(0, 0, 0, 1);
+      transition: transform 0.5s ease-in-out;
+      transform: translateX(calc((var(--current-step) - 1) * -100% / 3));
+
+      &_Item {
+        height: 300px;
+        width: 100%;
+
+        &.Item1 {
+          background-color: rgba(255, 0, 0, 0.5);
+        }
+
+        &.Item2 {
+          background-color: rgba(0, 255, 0, 0.5);
+        }
+
+        &.Item3 {
+          background-color: rgba(0, 0, 255, 0.5);
+        }
+      }
+    }
+  }
+}

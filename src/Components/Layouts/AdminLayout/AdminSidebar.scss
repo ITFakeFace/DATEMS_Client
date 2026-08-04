@@ -2,7 +2,9 @@
 
 .DAT_AdminSidebar {
   --padding-left-content: 20px;
-  --width: 350px;
+  --width: 300px;
+  --icon-font-size: 1.4rem;
+  --title-font-size: 1rem;
   @include flexbox(column);
   gap: 20px;
   min-width: var(--width);
@@ -35,9 +37,12 @@
     @include flexbox(row);
     gap: 12px;
     align-items: center;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+
     &_Avatar {
       &_Cover {
-        --size: 80px;
+        --size: 70px;
         --border-width: 1px;
         --border-padding: 2px;
         position: relative;
@@ -69,13 +74,13 @@
       gap: 4px;
 
       &_Hello {
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
 
       &_Username {
-        font-size: 1.3rem;
-        max-width: 200px;
+        font-size: 1.1rem;
         font-weight: 600;
+        max-width: 175px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -84,11 +89,246 @@
   }
 
   &_Menu {
-    padding-left: var(--padding-left-content);
+    @include flexbox(column);
+    gap: 20px;
+    box-sizing: border-box;
     overflow-y: auto;
+    width: 100%;
+    padding: 0 0 0 calc(var(--padding-left-content));
+    margin-top: 32px;
+    flex: 1;
+
+    &_SidebarCollapsibleItem {
+      --dot-size: 10px;
+      --dot-color: rgb(255, 255, 255);
+      --active-dot-color: var(--color-primary-dark);
+      --active-dot-border-width: 2px;
+      --icon-width: 50px;
+      --menu-item-margin-left: 2px;
+      --head-item-gap: 12px;
+      --head-padding-vertical: 12px;
+      --head-padding-horizontal: 8px;
+
+      @include flexbox(column);
+      align-items: flex-end;
+
+      &_HeadItem {
+        @include flexbox(row);
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--head-item-gap);
+        width: 100%;
+        box-sizing: border-box;
+        padding: var(--head-padding-vertical) var(--head-padding-horizontal);
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 5px 0 0 5px;
+
+        &.active {
+          background: linear-gradient(
+            to right,
+            var(--color-secondary-light) 0%,
+            rgb(255, 255, 255) 100%
+          );
+          color: var(--color-primary-dark);
+        }
+
+        &_Content {
+          @include flexbox(row);
+          gap: var(--head-item-gap);
+          align-items: center;
+
+          &_Icon {
+            width: var(--icon-width);
+            font-size: var(--icon-font-size);
+          }
+
+          &_Label {
+            font-size: var(--title-font-size);
+          }
+        }
+
+        &_Arrow {
+          font-size: 1.2rem;
+          transition: all 0.3s ease-in-out;
+
+          &.collapsed {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      &_ItemMenu {
+        display: grid;
+        grid-template-rows: 0fr;
+        width: calc(100% - var(--menu-item-margin-left));
+        background: rgba(20, 23, 84, 0.3);
+        border-radius: 10px 0 0 20px;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+
+        &.collapsed {
+          grid-template-rows: 1fr;
+        }
+
+        &.active {
+          border-radius: 0 0 0 20px;
+        }
+
+        &_Container {
+          @include flexbox(column);
+          gap: 12px;
+          width: 100%;
+          box-sizing: border-box;
+          overflow: hidden;
+          padding: 0 0;
+          transition: all 0.3s ease-in-out;
+
+          &.collapsed {
+            padding: 12px 0px;
+          }
+
+          &_Item {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: var(--title-font-size);
+            display: flex;
+            align-items: center;
+            gap: calc(var(--head-item-gap) + var(--head-padding-horizontal));
+            margin-left: calc(var(--head-padding-horizontal));
+
+            &_DotBox {
+              @include flexbox(row);
+              align-items: center;
+              justify-content: center;
+              width: calc(var(--icon-width) - var(--menu-item-margin-left));
+              height: 100%;
+
+              &.active &_Dot {
+                position: relative;
+                background-color: var(--active-dot-color);
+                border: solid var(--dot-color) var(--active-dot-border-width);
+                border-radius: 50%;
+              }
+
+              &_Dot {
+                width: var(--dot-size);
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+                background-color: var(--dot-color);
+              }
+            }
+
+            &_Label {
+              font-size: calc(var(--title-font-size) - 0.1rem);
+              font-weight: 400;
+
+              &.active {
+                font-weight: 600;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &_SidebarItem {
+      --icon-width: 50px;
+      --head-item-gap: 12px;
+      --head-padding-vertical: 12px;
+      --head-padding-horizontal: 8px;
+
+      @include flexbox(row);
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--head-item-gap);
+      width: 100%;
+      box-sizing: border-box;
+      padding: var(--head-padding-vertical) var(--head-padding-horizontal);
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px 0 0 5px;
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+
+      &.active {
+        background: linear-gradient(
+          to right,
+          var(--color-secondary-light) 0%,
+          rgb(255, 255, 255) 100%
+        );
+        color: var(--color-primary-dark);
+      }
+
+      &_Content {
+        @include flexbox(row);
+        gap: var(--head-item-gap);
+        align-items: center;
+
+        &_Icon {
+          width: var(--icon-width);
+          font-size: var(--icon-font-size);
+        }
+
+        &_Label {
+          font-size: var(--title-font-size);
+        }
+      }
+
+      &_Arrow {
+        font-size: 1.5rem;
+        transition: all 0.3s ease-in-out;
+
+        &.collapsed {
+          transform: rotate(90deg);
+        }
+      }
+    }
   }
 
   &_Footer {
     padding-left: var(--padding-left-content);
+    padding-bottom: 20px;
+    @include flexbox(column);
+    gap: 20px;
+    &_Item {
+      --icon-width: 50px;
+      --head-item-gap: 12px;
+      --head-padding-vertical: 12px;
+      --head-padding-horizontal: 8px;
+
+      @include flexbox(row);
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--head-item-gap);
+      width: 100%;
+      box-sizing: border-box;
+      padding: var(--head-padding-vertical) var(--head-padding-horizontal);
+      cursor: pointer;
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease-in-out;
+
+      &_Content {
+        @include flexbox(row);
+        gap: var(--head-item-gap);
+        align-items: center;
+
+        &_Icon {
+          width: var(--icon-width);
+          font-size: var(--icon-font-size);
+        }
+
+        &_Label {
+          font-size: var(--title-font-size);
+        }
+      }
+
+      &_Logout:hover {
+        color: var(--color-danger);
+      }
+    }
   }
 }
