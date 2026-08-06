@@ -22,12 +22,12 @@
       height: 25%;
 
       &_Greeting {
-        font-size: 1.058rem;
+        font-size: 1.585rem;
         color: rgb(255, 255, 255);
       }
 
       &_Brand {
-        font-size: 3.785rem;
+        font-size: 6rem;
         font-weight: 700;
         background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(233, 246, 244) 14%, rgb(91, 189, 176) 100%);
         -webkit-background-clip: text;
@@ -48,7 +48,7 @@
 
         font-weight: 600;
         margin-top: 15px;
-        font-size: 1.985rem;
+        font-size: 2rem;
         color: rgb(255, 255, 255);
       }
 
@@ -100,6 +100,7 @@
             width: 100%;
             padding-left: 20px;
             border-radius: inherit;
+            color: rgb(255, 255, 255);
 
             &::placeholder {
               color: white;
@@ -178,13 +179,21 @@
 
       a {
         color: white;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        text-decoration: none;
       }
 
       input {
-        height: 15px;
-        width: 15px;
+        height: 20px;
+        width: 20px;
         accent-color: rgb(6, 48, 141);
 
+      }
+
+      label {
+        font-size: 1.015rem;
+        color: rgb(255, 255, 255);
+        font-weight: 500;
       }
     }
 
@@ -199,7 +208,7 @@
       button {
         height: 35%;
         width: 35%;
-        font-size: 1.858rem;
+        font-size: 1.558rem;
         border-radius: 50px;
         font-weight: 700;
         border: none;
