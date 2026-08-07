@@ -9,8 +9,9 @@ export default function ForgetPasswordComponent() {
     const [current, setcurrent] = useState(0);
     const [email, setemail] = useState("");
     const [pass, setpass] = useState("");
+
     function moveUP() {
-        setcurrent(current + 1)
+        setcurrent(current + 1);
     }
     const inputRef = useRef([]);
     function moveDown() {
@@ -63,10 +64,10 @@ export default function ForgetPasswordComponent() {
 
         requestAnimationFrame(() => {
             if (value !== "" && index < otp.length - 1) {
-                // Nhập số -> sang ô tiếp theo
+
                 inputRef.current[index + 1]?.focus();
             } else if (value === "") {
-                // Xóa số -> giữ focus ở ô hiện tại
+
                 inputRef.current[index]?.focus();
             }
         });
@@ -151,15 +152,23 @@ export default function ForgetPasswordComponent() {
                 </div>
                 <div className="Step3_Body">
                     <div className="Step3_Body_Password">
-                        <span>NEW PASSWORD:</span>
-                        <form style={{ height: "400px " }}>
-                            <div className="Step3_Body_Password_Border">
-                                <input type="password" placeholder="Password" name="password" value={pass} onChange={(e) => setpass(e.target.value)} ></input>
+                        <span>NEW PASSWORD</span>
+                        <div className="Step3_Body_Password_Border">
+                            <input type="password" placeholder="Password"></input>
+                        </div>
 
-                            </div>
-
-
-                        </form>
+                    </div>
+                    <div className="Step3_Body_Confirm">
+                        <span>CONFIRM PASSWORD</span>
+                        <div className="Step3_Body_Confirm_Border">
+                            <input type="password" placeholder="Confirm Password"></input>
+                        </div>
+                    </div>
+                    <div className="Step3_Body_Button">
+                        <NavLink to="/login">
+                            <button>CONTINUE</button>
+                        </NavLink>
+                        <span onClick={() => setcurrent(0)}>BACK TO STEP 1</span>
                     </div>
                 </div>
             </div >
@@ -194,60 +203,3 @@ export default function ForgetPasswordComponent() {
 
 
 
-// import { useRef, useState } from "react";
-
-// const OTP_LENGTH = 6;
-
-// export default function OTPInput() {
-//     const [otp, setOtp] = useState(Array(OTP_LENGTH).fill(""));
-//     const inputRefs = useRef([]);
-
-//     const handleChange = (value, index) => {
-//         if (!/^\d*$/.test(value)) return;
-
-//         const digit = value.slice(-1);
-
-//         const newOtp = [...otp];
-//         newOtp[index] = digit;
-//         setOtp(newOtp);
-
-//         // Focus sang ô tiếp theo
-//         if (digit && index < OTP_LENGTH - 1) {
-//             inputRefs.current[index + 1]?.focus();
-//         }
-//     };
-
-//     const handleKeyDown = (e, index) => {
-//         if (e.key === "Backspace") {
-//             if (otp[index]) {
-//                 const newOtp = [...otp];
-//                 newOtp[index] = "";
-//                 setOtp(newOtp);
-//             } else if (index > 0) {
-//                 inputRefs.current[index - 1]?.focus();
-//             }
-//         } else if (e.key === "ArrowLeft" && index > 0) {
-//             inputRefs.current[index - 1]?.focus();
-//         } else if (e.key === "ArrowRight" && index < OTP_LENGTH - 1) {
-//             inputRefs.current[index + 1]?.focus();
-//         }
-//     };
-
-//     return (
-//         <div className="flex gap-2">
-//             {otp.map((value, index) => (
-//                 <input
-//                     key={index}
-//                     ref={(el) => {
-//                         inputRefs.current[index] = el;
-//                     }}
-//                     value={value}
-//                     onChange={(e) => handleChange(e.target.value, index)}
-//                     onKeyDown={(e) => handleKeyDown(e, index)}
-//                     maxLength={1}
-//                     className="w-12 h-12 text-center border rounded"
-//                 />
-//             ))}
-//         </div>
-//     );
-// }

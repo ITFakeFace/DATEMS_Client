@@ -63,13 +63,9 @@
 
         &_Username {
           display: flex;
-
           width: 100%;
-
-          height: 35%;
+          height: 40%;
           border-radius: 55px;
-
-
           position: relative;
 
 
@@ -103,7 +99,7 @@
             color: rgb(255, 255, 255);
 
             &::placeholder {
-              color: white;
+              color: rgb(255, 255, 255);
               font-weight: 200px;
               opacity: 50%;
             }
@@ -117,7 +113,7 @@
 
           width: 100%;
 
-          height: 35%;
+          height: 40%;
           border-radius: 55px;
 
           position: relative;
@@ -151,6 +147,7 @@
             width: 100%;
             padding-left: 20px;
             border-radius: inherit;
+            color: rgb(255, 255, 255);
 
             &::placeholder {
               color: white;
@@ -206,9 +203,9 @@
 
 
       button {
-        height: 35%;
+        height: 40%;
         width: 35%;
-        font-size: 1.558rem;
+        font-size: 1.258rem;
         border-radius: 50px;
         font-weight: 700;
         border: none;
