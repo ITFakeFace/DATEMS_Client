@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Login.scss";
+import { NavLink } from "react-router-dom";
 
 const emptyLoginUser = {
   username: null,
@@ -27,7 +28,7 @@ export default function Login() {
         </div>
         <form className="DAT_Login_Border_Body" onSubmit={handleSubmit}>
           <div className="DAT_Login_Border_Body_Title">
-            Login
+            LOGIN
           </div>
 
           <div className="DAT_Login_Border_Body_Main" >
@@ -53,10 +54,10 @@ export default function Login() {
             </label>
           </div>
 
-          <a href="" >Forget password</a>
+          <NavLink to="/Forget">Forget Password</NavLink>
         </div>
         <div className="DAT_Login_Border_ButtonRow">
-          <button>Login</button>
+          <button>LOGIN</button>
         </div>
 
       </div>
